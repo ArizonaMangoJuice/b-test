@@ -32,14 +32,14 @@ async function tabLoop(num, func){
     });
 
         await tabLoop(5,  page.keyboard);
-        await page.waitFor(200);
+        await page.waitFor(400);
         
         await page.keyboard.type('');
         console.log('typed username');
 
         await tabLoop(1,  page.keyboard);
 
-        await page.waitFor(200);
+        await page.waitFor(400);
 
         await page.keyboard.type('');
         console.log('typed pasword');
@@ -67,25 +67,33 @@ async function tabLoop(num, func){
           waitUntil: 'networkidle0',
         });
         
-        await page.waitFor(5000);
         await tabLoop(14,  page.keyboard);
+        console.log('tabbed')
+        // await page.waitFor(6000);
+        
+        await page.keyboard.type('', {delay: 30});
 
+        // await page.waitFor(2500);
+
+        await tabLoop(1,  page.keyboard);
+        console.log('tabbed')
+        
+        await page.keyboard.type('');
+        // await page.waitFor(1000);
+
+        await tabLoop(1,  page.keyboard);
+        console.log('tabbed')
         
         await page.keyboard.type('');
 
-        await page.waitFor(1000);
-
-        await tabLoop(1,  page.keyboard);
-        await page.keyboard.type('');
-        await page.waitFor(1000);
-
-        await tabLoop(1,  page.keyboard);
-        await page.keyboard.type('');
-
         await tabLoop(6,  page.keyboard);
+        console.log('tabbed')
 
         await page.keyboard.press('Space');
-
+        console.log('before picture')
+        
         let dateString = date.toDateString().split(' ').join('')
         await page.screenshot({path: 'example' + dateString + '.png'});
+        console.log('done')
+        
 })();
