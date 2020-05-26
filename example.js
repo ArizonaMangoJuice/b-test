@@ -49,7 +49,7 @@ async function tabLoop(num, func){
 
         await page.waitFor(5000);
 
-        await page.goto('https://www.nike.com/launch/t/air-max-1-huarache-dna-ch1-pack', {
+        await page.goto('https://www.nike.com/launch/t/sb-dunk-low-ben-and-jerrys-chunk-dunky-5-26', {
           waitUntil: 'networkidle0',
         });
 
@@ -58,7 +58,7 @@ async function tabLoop(num, func){
         await page.keyboard.press('Space');
 
         await page.waitFor(100);
-        await page.mouse.click(300,250);
+        await page.mouse.click(300,284);
         await page.mouse.click(300,500);
 
         await page.waitFor(2550);
@@ -67,29 +67,31 @@ async function tabLoop(num, func){
           waitUntil: 'networkidle0',
         });
         
-        await tabLoop(14,  page.keyboard);
+        await tabLoop(16,  page.keyboard);
         console.log('tabbed')
         // await page.waitFor(6000);
+        await page.waitFor(500);
         
         await page.keyboard.type('', {delay: 30});
 
         // await page.waitFor(2500);
 
-        await tabLoop(1,  page.keyboard);
-        console.log('tabbed')
+        // await tabLoop(1,  page.keyboard);
+        // console.log('tabbed')
         
-        await page.keyboard.type('');
-        // await page.waitFor(1000);
+        // await page.keyboard.type('');
+        // // await page.waitFor(1000);
 
-        await tabLoop(1,  page.keyboard);
-        console.log('tabbed')
+        // await tabLoop(1,  page.keyboard);
+        // console.log('tabbed')
         
-        await page.keyboard.type('');
+        // await page.keyboard.type('');
 
-        await tabLoop(6,  page.keyboard);
+        await tabLoop(3,  page.keyboard);
         console.log('tabbed')
+        await page.waitFor(500);
 
-        await page.keyboard.press('Space');
+        await page.keyboard.press('Enter');
         console.log('before picture')
         
         let dateString = date.toDateString().split(' ').join('')
